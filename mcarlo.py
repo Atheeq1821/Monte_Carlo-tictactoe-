@@ -21,10 +21,10 @@ class TreeNode:
 
 class Mcts:
     #searching for the best move at current state
-    def search(self,current_state):
+    def search(self,current_state,iteration):
         self.root = TreeNode(current_state,None)
         #Iterations
-        for iterations in range(1000):
+        for iterations in range(iteration):
             #select an action
             node=self.select(self.root)
             #simulation phase - score estimation

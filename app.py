@@ -15,6 +15,7 @@ player='o'
 opponent='x'
 mcts = Mcts()
 mcboard = Board()
+iterations=1000
 ########################################
 
 
@@ -26,16 +27,16 @@ def index():
 
 #this assigns x and o for ai and player randomly 
 #if ai is x then ai makes the move first
-@app.route("/start")
-def start():
-    global mcts,mcboard,board,opponent,player
+@app.route("/start/<int:iteration>")
+def start(iteration):
+    global mcts,mcboard,board,opponent,player,iterations
     board = [["","",""],["","",""],["","",""]]
     opponent,player=choose()
-
+    iterations=iteration # for difficulty
     mcboard = Board()
     #ai makes its first move
     if player=='x':
-        best = mcts.search(mcboard)
+        best = mcts.search(mcboard,iteration)
         mcboard = best.board
         board=mcboard.get_board_format()
     return render_template('index.html', opponent=opponent, player=player,board=board)
@@ -74,7 +75,7 @@ def move(index):
 def aiMove():
     global board,mcboard,mcts
     #best move fro the monte carlo
-    best = mcts.search(mcboard)
+    best = mcts.search(mcboard,iteration=iterations)
 
     #mmaking the best move on the board
     mcboard = best.board
