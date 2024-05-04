@@ -12,7 +12,7 @@ function playerMove(index) {
                 document.getElementById('status').textContent = "It's a Draw";
             }
             else{
-                setTimeout(triggerAIMove,200);
+                triggerAIMove();
             }
         })
         .catch(error => console.error('Error:', error));
