@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="\static\style.css">
+</head>
+<body>
+    <div class="result">
+        <h1 class="title">Tic Tac Toe</h1>
+    </div>
+    <h3 id="opponent">Ai :- {{ player }}</h3>
+    <h3 id="player">Player :- {{ opponent }}</h3>
+    <div class="container">
+        <h2 id="status"></h2>
+        <div class="board">
+            <div class="row">
+                <p onclick="playerMove('00')"  class="cell" id="0">{{ board[0][0] }}</p>
+                <p onclick="playerMove('01')" class="cell" id="1">{{ board[0][1] }}</p>
+                <p onclick="playerMove('02')" class="cell" id="2">{{ board[0][2] }}</p>
+            </div>
+            <div class="row">
+                <p onclick="playerMove('10')" class="cell" id="3">{{ board[1][0] }}</p>
+                <p onclick="playerMove('11')" class="cell" id="4">{{ board[1][1] }}</p>
+                <p onclick="playerMove('12')" class="cell" id="5">{{ board[1][2] }}</p>
+            </div>
+            <div class="row">
+                <p onclick="playerMove('20')" class="cell" id="6">{{ board[2][0] }}</p>
+                <p onclick="playerMove('21')" class="cell" id="7">{{ board[2][1] }}</p>
+                <p onclick="playerMove('22')" class="cell" id="8">{{ board[2][2] }}</p>
+            </div>
+        </div>
+        <div  class="btn">
+            <a href="\" id="reset">Reset</a>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
