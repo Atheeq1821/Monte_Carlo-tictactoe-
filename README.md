@@ -1,7 +1,7 @@
 
 # MONTE CARLO AI BASED TIC TAC TOE GAME
 
-## You can play this game on  - [link](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+## You can play this game on  - [link](https://montecarlo-tictactoe.azurewebsites.net/)
 Monte Carlo Tic-Tac-Toe is a Python-based implementation of the classic Tic-Tac-Toe game with added artificial intelligence using the Monte Carlo search method. This project offers players the opportunity to play against an AI opponent at three different difficulty levels, each corresponding to a different number of iterations in the Monte Carlo search algorithm.
 
 
